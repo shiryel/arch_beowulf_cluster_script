@@ -1,3 +1,4 @@
+> This version is unstable, and is NOT yet fully implemented (check the todo list).
 # arch beowulf cluster script
 A Shell Script for creating a headnode and slaves in a beowulf cluster
 
@@ -8,14 +9,16 @@ Create a folder named programs, and download the mpich, hydra and primeCount (do
 
 Download Urls:
 mpich and hydra: https://www.mpich.org/downloads/
+
 primeCount: https://github.com/kimwalisch/primecount/releases
+
 
 Finaly, run the archScript.sh with the desired options
 
 ### Most used Options
 --headnode  # For instaling the headnode
 
---headnodeAddress  # For instaling the slaves
+--headnodeAddress=[([^\.]+\.){3}[^\.]+]  # For instaling the slaves
 
 --language=[loadkey]  # For loadkeys language Ex: us-acentos or the default br-abnt2
 
@@ -26,13 +29,18 @@ Finaly, run the archScript.sh with the desired options
 -h or --help  # For the help messages
 
 #### In test:
---deviceSection=  # For install the cluster after a device section
+--deviceSection=[1-9]+ # For install the cluster after a device section
 
---tags=  # Yet for rapid-mode (not add an user) and no-reboot
+--tags=[rapid-mode|no-reboot]  # Yet for rapid-mode (not add an user) and no-reboot
 
---partitionType=  # Not completely implemented
+--partitionType=[MBR_BIOS|GTP_BIOS|GTP_EFI|GPT_EFI-BIOS]  # Not completely implemented
 
---inputFiles=  # With errors
+--inputFiles=[/dev/sd[a-z][1-9]+)[\ ]+([^\ ]+)[\ ]+([^\ ]+)[\ ]+([^\ ]+)[\ ]+([^\ ]+)]  # Bugged
+
+## TODO
+Finish implementing the partitions types
+
+Finish implementing other clustering programs (and make it more generic)
 
 ## Help
 Feel free to help the repository.
