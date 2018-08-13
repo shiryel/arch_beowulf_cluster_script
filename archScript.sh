@@ -108,11 +108,10 @@ preChroot() {
   echo "${magenta}pre-chroot complete${reset}"
   sleep 2
   if [ "$headnode" -ne 1 ]; then
-    arch-chroot "$mountPoint" /usr/bin/bash /chroot/archScript.sh --chroot --device="$devBase" --partitionType="$partitionType" --language="$lang" --headnodeAddress="$headnodeAddress" --inputFiles="$inputDev $mirrorsDir $pacmanCfgDir $scriptsDir $programsDir"
+    arch-chroot "$mountPoint" /usr/bin/bash /chroot/archScript.sh --chroot --device="$devBase" --partitionType="$partitionType" --language="$lang" --headnodeAddress="$headnodeAddress" --password="$password" --inputFiles="$inputDev $mirrorsDir $pacmanCfgDir $scriptsDir $programsDir"
   else
-    arch-chroot "$mountPoint" /usr/bin/bash /chroot/archScript.sh --chroot --device="$devBase" --partitionType="$partitionType" --language="$lang" --headnode --inputFiles="$inputDev $mirrorsDir $pacmanCfgDir $scriptsDir $programsDir"
+    arch-chroot "$mountPoint" /usr/bin/bash /chroot/archScript.sh --chroot --device="$devBase" --partitionType="$partitionType" --language="$lang" --headnode --password="$password" --inputFiles="$inputDev $mirrorsDir $pacmanCfgDir $scriptsDir $programsDir"
   fi
-  
 }
 
 posChroot() {
