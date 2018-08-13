@@ -21,7 +21,8 @@ fi
 cat "$_SCRIPTPATH"/"$mirrorsDir" > /etc/pacman.d/mirrorlist
 echo "${magenta}UPDATE MIRROR LIST COMPLETE${reset}"
 
-pacstrap -C "$_SCRIPTPATH"/"$pacmanCfgDir" "$mountPoint" base openmpi nfs-utils grub base-devel gcc-fortran
+# OLD pacstrap -C "$_SCRIPTPATH"/"$pacmanCfgDir" "$mountPoint" base openmpi nfs-utils grub base-devel gcc-fortran
+pacstrap -C "$_SCRIPTPATH"/"$pacmanCfgDir" "$mountPoint" base nfs-utils grub elixir
 echo "${magenta}PACKAGE COMPLETE${reset}"
 
 genfstab -U "$mountPoint" >> "$mountPoint"/etc/fstab

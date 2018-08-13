@@ -1,6 +1,8 @@
 #!/bin/bash
 
-headnodeAddress="$1"
+_SCRIPTPATH="$1"
+scriptsDir="$2"
+headnodeAddress="$3"
 
 ### NFS IMPORT
 # https://wiki.archlinux.org/index.php/NFS
@@ -17,17 +19,19 @@ sed -i -- 's/AuthorizedKeysFile\t.ssh\/authorized_keys/AuthorizedKeysFile\t.ssh\
 echo "UserKnownHostsFile=/mpi/cloud/known_hosts" >> /etc/ssh/ssh_config
 ssh -o "StrictHostKeyChecking no" localhost
 
+cp "$_SCRIPTPATH"/$scriptsDir/autoIpDistribute.sh > /etc/profile.d/
+
 # Confirm if base-devel and fortran 77 is instaled
-pacman --noconfirm -S base-devel gcc-fortran
+#pacman --noconfirm -S base-devel gcc-fortran
 
 ## Configure mpich2 and hydra archives
-cd /mpi/cloud/mpich
-make install
+#cd /mpi/cloud/mpich
+#make install
 
-cd /mpi/cloud/hydra
-make install
+#cd /mpi/cloud/hydra
+#make install
 
 #echo "export PATH=/mpi/cloud/mpich:/mpi/cloud/hydra:$PATH" >> /etc/profile
 
 ## Instaling primeCount
-echo "export PATH=/mpi/cloud/primecount:$PATH" >> /etc/profile
+#echo "export PATH=/mpi/cloud/primecount:$PATH" >> /etc/profile

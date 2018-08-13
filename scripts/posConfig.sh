@@ -2,6 +2,7 @@
 
 lang="$1"
 password="$2"
+mpiPassword="mpi"
 
 loadkeys "$lang"
 timedatectl set-ntp true
@@ -18,3 +19,4 @@ useradd --home /mpi --uid 1100 mpi
 usermod -aG sudo mpi
 chown -R mpi /mpi
 chgrp -R mpi /mpi
+echo -e "$mpiPassword\n$mpiPassword" | passwd mpi

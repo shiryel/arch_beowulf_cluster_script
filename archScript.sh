@@ -125,7 +125,7 @@ posChroot() {
   echo "${magenta}network complete${reset}"
 
   if [ "$headnode" -ne 1 ]; then
-    bash "$SCRIPTPATH"/"$scriptsDir"/slaveConfig.sh "$headnodeAddress"
+    bash "$SCRIPTPATH"/"$scriptsDir"/slaveConfig.sh "$SCRIPTPATH" "$scriptsDir" "$headnodeAddress"
   else
     bash "$SCRIPTPATH"/"$scriptsDir"/headnodeConfig.sh "$SCRIPTPATH" "$scriptsDir" "$programsDir"
   fi

@@ -12,4 +12,5 @@
 
 systemctl enable dhcpcd
 systemctl enable sshd.service
-pacman --noconfirm -S openssh nfs-utils cifs-utils
+#pacman --noconfirm -S openssh nfs-utils cifs-utils
+pacman --noconfirm -S openssh nfs-utils elixir

@@ -8,31 +8,31 @@ cp -Rf "$_SCRIPTPATH"/"$programsDir"/nvim ~/.config/nvim
 ~/.config/nvim/install.sh
 
 ### Instaling programs for work
-tar -vzxf "$_SCRIPTPATH"/"$programsDir"/hydra* -C /mpi/cloud
-mv /mpi/cloud/hydra* /mpi/cloud/hydra
-tar -vzxf "$_SCRIPTPATH"/"$programsDir"/mpich* -C /mpi/cloud
-mv /mpi/cloud/mpich* /mpi/cloud/mpich
+#tar -vzxf "$_SCRIPTPATH"/"$programsDir"/hydra* -C /mpi/cloud
+#mv /mpi/cloud/hydra* /mpi/cloud/hydra
+#tar -vzxf "$_SCRIPTPATH"/"$programsDir"/mpich* -C /mpi/cloud
+#mv /mpi/cloud/mpich* /mpi/cloud/mpich
 
 # Confirm if base-devel and fortran 77 is instaled
-pacman --noconfirm -S base-devel gcc-fortran
+#pacman --noconfirm -S base-devel gcc-fortran
 
 ## Configure mpich2 and hydra archives
-cd /mpi/cloud/mpich
-./configure
-make
-make install
+#cd /mpi/cloud/mpich
+#./configure
+#make
+#make install
 
-cd /mpi/cloud/hydra
-./configure
-make
-make install
+#cd /mpi/cloud/hydra
+#./configure
+#make
+#make install
 
 #echo "export PATH=/mpi/cloud/mpich:/mpi/cloud/hydra:$PATH" >> /etc/profile
 
 ## Instaling primecount
-tar -Jxf "$_SCRIPTPATH"/"$programsDir"/primecount* -C /mpi/cloud
-mv /mpi/cloud/primecount* /mpi/cloud/mpich
-echo "export PATH=/mpi/cloud/primecount:$PATH" >> /etc/profile
+#tar -Jxf "$_SCRIPTPATH"/"$programsDir"/primecount* -C /mpi/cloud
+#mv /mpi/cloud/primecount* /mpi/cloud/mpich
+#echo "export PATH=/mpi/cloud/primecount:$PATH" >> /etc/profile
 
 ### CLUSTER SSH MANAGER
 # Confirm if clusterssh is instaled
