@@ -19,7 +19,8 @@ sed -i -- 's/AuthorizedKeysFile\t.ssh\/authorized_keys/AuthorizedKeysFile\t.ssh\
 echo "UserKnownHostsFile=/mpi/cloud/known_hosts" >> /etc/ssh/ssh_config
 ssh -o "StrictHostKeyChecking no" localhost
 
-cp "$_SCRIPTPATH"/$scriptsDir/autoIpDistribute.sh > /etc/profile.d/
+cp "$_SCRIPTPATH/$scriptsDir/autoIpDistribute.sh" /etc/profile.d/
+cp "$_SCRIPTPATH/$scriptsDir/renew-nfs.sh" /mpi
 
 # Confirm if base-devel and fortran 77 is instaled
 #pacman --noconfirm -S base-devel gcc-fortran
