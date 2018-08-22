@@ -51,11 +51,13 @@ exportfs -rav
 mkdir /mpi/.ssh
 ssh-keygen -N "" -t ecdsa -b 521 -C "headnode" -f /mpi/.ssh/id_ecdsa
 cat /mpi/.ssh/id_ecdsa.pub >> /mpi/cloud/authorized_keys
+chmod 777 /mpi/cloud/authorized_keys
 chmod og-wx /mpi/cloud/authorized_keys
 
 sed -i -- 's/AuthorizedKeysFile\t.ssh\/authorized_keys/AuthorizedKeysFile\t.ssh\/authorized_keys \/mpi\/cloud\/authorized_keys/g' /etc/ssh/sshd_config
 
 echo "" >> /mpi/cloud/known_hosts
+chmod 777 /mpi/cloud/known_hosts
 echo "UserKnownHostsFile=/mpi/cloud/known_hosts" >> /etc/ssh/ssh_config
 ssh -o "StrictHostKeyChecking no" localhost
 
