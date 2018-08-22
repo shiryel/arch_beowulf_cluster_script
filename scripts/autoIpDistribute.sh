@@ -10,7 +10,6 @@ while true; do
       grep -vFf - /mpi/cloud/nodes.tmp < <(grep -A1 $ipm /mpi/cloud/nodes.tmp) > /mpi/cloud/nodes
       echo $ipm >> /mpi/cloud/nodes
       echo $ipa >> /mpi/cloud/nodes
-      exit 0
     else
       sleep 10
     fi
