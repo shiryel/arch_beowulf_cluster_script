@@ -45,6 +45,3 @@ Finish implementing other clustering programs (and make it more generic)
 
 ## Help
 Feel free to help the repository.
-
-## LICENSE
-arch-beowulf-cluster-script is copyright (c) Vinicius Molina 2018, and released under the GNU GENERAL PUBLIC LICENSE Version 3. See the LICENCE file in this repository for detailed information.
