@@ -1,0 +1,3 @@
+[submodule "programs/nvim"]
+	path = programs/nvim
+	url = https://github.com/Fukushia/neoVim-configs
