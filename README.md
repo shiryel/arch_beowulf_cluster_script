@@ -3,18 +3,9 @@
 A Shell Script for creating a headnode and slaves in a beowulf cluster
 
 ## How to use it
-(Optional) Run autoDownload for save the download to the equivalent every time to install a new node
+Create a pkg directory and run autoDownload for save the download to the equivalent every time to install a new node
 
-Create a folder named programs, and download the mpich, hydra and primeCount (do not unpack)
-
-Download Urls:
-
-mpich and hydra: https://www.mpich.org/downloads/
-
-primeCount: https://github.com/kimwalisch/primecount/releases
-
-
-Finaly, run the archScript.sh with the desired options
+Run the archScript.sh with the desired options
 
 ### Most used Options
 --headnode  # For instaling the headnode
